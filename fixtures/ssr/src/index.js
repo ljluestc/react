@@ -1,6 +1,1 @@
-import React from 'react';
-import {hydrateRoot} from 'react-dom/client';
-
-import App from './components/App';
-
-hydrateRoot(document, <App assets={window.assetManifest} />);
+importReactfrom'react';import{hydrateRoot}from'react-dom/client';importAppfrom'./components/App';hydrateRoot(document,<Appassets={window.assetManifest}/>);

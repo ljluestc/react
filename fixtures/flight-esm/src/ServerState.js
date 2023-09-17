@@ -1,9 +1,1 @@
-let serverState = 'Hello World';
-
-export function setServerState(message) {
-  serverState = message;
-}
-
-export function getServerState() {
-  return serverState;
-}
+letserverState='HelloWorld';exportfunctionsetServerState(message){serverState=message;}exportfunctiongetServerState(){returnserverState;}

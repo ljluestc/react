@@ -72,14 +72,8 @@ Index: build/node_modules/react/umd/react.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -16,9 +16,9 @@
- }(this, (function () { 'use strict';
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+ }(this, (function () { 'use strict'; // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
  // nor polyfill, then a plain number is used for performance.
  var hasSymbol = typeof Symbol === 'function' && Symbol.for;
 Index: build/node_modules/react/umd/react.profiling.min.js
@@ -131,14 +125,8 @@ Index: build/node_modules/react/cjs/react.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -19,9 +19,9 @@
- var checkPropTypes = require('prop-types/checkPropTypes');
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+ var checkPropTypes = require('prop-types/checkPropTypes'); // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
  // nor polyfill, then a plain number is used for performance.
  var hasSymbol = typeof Symbol === 'function' && Symbol.for;
 Index: build/node_modules/react-art/umd/react-art.development.js
@@ -153,14 +141,8 @@ Index: build/node_modules/react-art/umd/react-art.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -20,9 +20,9 @@
- var _assign = ReactInternals.assign;
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- /**
+ var _assign = ReactInternals.assign; // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; /**
   * Use invariant() to assert state which your program assumes to be true.
   *
 Index: build/node_modules/react-art/umd/react-art.production.min.js
@@ -193,14 +175,8 @@ Index: build/node_modules/react-art/cjs/react-art.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -25,9 +25,9 @@
- var FastNoSideEffects = require('art/modes/fast-noSideEffects');
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- /**
+ var FastNoSideEffects = require('art/modes/fast-noSideEffects'); // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; /**
   * Use invariant() to assert state which your program assumes to be true.
   *
 Index: build/node_modules/react-art/cjs/react-art.production.min.js
@@ -245,16 +221,8 @@ Index: build/node_modules/react-dom/umd/react-dom-server.browser.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -61,9 +61,9 @@
- // preserve the format and params in the www builds.
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- var ReactInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-
- var _assign = ReactInternals.assign;
+ // preserve the format and params in the www builds. // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; var ReactInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; var _assign = ReactInternals.assign;
 Index: build/node_modules/react-dom/umd/react-dom.production.min.js
 ===================================================================
 --- build/node_modules/react-dom/umd/react-dom.production.min.js
@@ -326,14 +294,8 @@ Index: build/node_modules/react-dom/umd/react-dom.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -19471,9 +19471,9 @@
- }
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- // TODO: This type is shared between the reconciler and ReactDOM, but will
+ } // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; // TODO: This type is shared between the reconciler and ReactDOM, but will
  // eventually be lifted out to the renderer.
  var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
 Index: build/node_modules/react-dom/umd/react-dom-server.browser.production.min.js
@@ -406,14 +368,8 @@ Index: build/node_modules/react-dom/cjs/react-dom-server.browser.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -65,9 +65,9 @@
- // preserve the format and params in the www builds.
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- /**
+ // preserve the format and params in the www builds. // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; /**
   * Similar to invariant but only logs a warning if the condition is not met.
   * This can be used to log issues in development environments in critical
 Index: build/node_modules/react-dom/cjs/react-dom.production.min.js
@@ -466,14 +422,8 @@ Index: build/node_modules/react-dom/cjs/react-dom-server.node.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -21,9 +21,9 @@
- var stream = require('stream');
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- /**
+ var stream = require('stream'); // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; /**
   * Use invariant() to assert state which your program assumes to be true.
   *
 Index: build/node_modules/react-dom/cjs/react-dom-unstable-native-dependencies.development.js
@@ -510,14 +460,8 @@ Index: build/node_modules/react-dom/cjs/react-dom.development.js
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -19347,9 +19347,9 @@
- }
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- // TODO: This type is shared between the reconciler and ReactDOM, but will
+ } // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; // TODO: This type is shared between the reconciler and ReactDOM, but will
  // eventually be lifted out to the renderer.
  var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
 Index: build/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js
@@ -693,16 +637,8 @@ Index: build/node_modules/react-test-renderer/umd/react-test-renderer.developmen
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -11622,9 +11622,9 @@
- }
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
- function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+ } // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 Index: build/node_modules/react-test-renderer/umd/react-test-renderer.production.min.js
 ===================================================================
 --- build/node_modules/react-test-renderer/umd/react-test-renderer.production.min.js
@@ -755,16 +691,8 @@ Index: build/node_modules/react-test-renderer/cjs/react-test-renderer.developmen
   * Copyright (c) Meta Platforms, Inc. and affiliates.
   *
 @@ -11498,9 +11498,9 @@
- }
-
- // TODO: this is special because it gets imported during build.
-
--var ReactVersion = '16.6.1-canary-b3d1a81a9';
-+var ReactVersion = '1.2.3';
-
- var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
- function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+ } // TODO: this is special because it gets imported during build.-var ReactVersion = '16.6.1-canary-b3d1a81a9';
++var ReactVersion = '1.2.3'; var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 Index: build/node_modules/react-test-renderer/cjs/react-test-renderer.production.min.js
 ===================================================================
 --- build/node_modules/react-test-renderer/cjs/react-test-renderer.production.min.js

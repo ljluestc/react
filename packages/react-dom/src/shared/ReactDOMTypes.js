@@ -5,11 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export type PrefetchDNSOptions = {};
-export type PreconnectOptions = {crossOrigin?: string};
-export type PreloadOptions = {
+ */export type PreloadOptions = {
   as: string,
   crossOrigin?: string,
   integrity?: string,
@@ -27,11 +23,7 @@ export type PreinitOptions = {
   integrity?: string,
   nonce?: string,
   fetchPriority?: 'high' | 'low' | 'auto',
-};
-
-export type HostDispatcher = {
+};export type HostDispatcher = {
   prefetchDNS: (href: string, options?: ?PrefetchDNSOptions) => void,
-  preconnect: (href: string, options: ?PreconnectOptions) => void,
-  preload: (href: string, options: PreloadOptions) => void,
-  preinit: (href: string, options: PreinitOptions) => void,
+preinit: (href: string, options: PreinitOptions) => void,
 };

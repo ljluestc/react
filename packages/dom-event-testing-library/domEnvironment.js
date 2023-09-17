@@ -5,63 +5,47 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @emails react-core
- */
-
-'use strict';
-
-/**
+ */'use strict';/**
  * Change environment support for PointerEvent.
- */
-
-function emptyFunction() {}
-
-export function hasPointerEvent() {
+ */function emptyFunction() {}export function hasPointerEvent() {
   return global != null && global.PointerEvent != null;
-}
-
-export function setPointerEvent(bool) {
+}export function setPointerEvent(bool) {
   const pointerCaptureFn = name => id => {
-    if (typeof id !== 'number') {
-      if (__DEV__) {
-        console.error('A pointerId must be passed to "%s"', name);
-      }
-    }
+if (typeof id !== 'number') {
+  if (__DEV__) {
+console.error('A pointerId must be passed to "%s"', name);
+  }
+}
   };
   global.PointerEvent = bool ? emptyFunction : undefined;
   global.HTMLElement.prototype.setPointerCapture = bool
-    ? pointerCaptureFn('setPointerCapture')
-    : undefined;
+? pointerCaptureFn('setPointerCapture')
+: undefined;
   global.HTMLElement.prototype.releasePointerCapture = bool
-    ? pointerCaptureFn('releasePointerCapture')
-    : undefined;
-}
-
-/**
+? pointerCaptureFn('releasePointerCapture')
+: undefined;
+}/**
  * Change environment host platform.
- */
-
-const platformGetter = jest.spyOn(global.navigator, 'platform', 'get');
-
-export const platform = {
+ */const platformGetter = jest.spyOn(global.navigator, 'platform', 'get');export const platform = {
   clear() {
-    platformGetter.mockClear();
+platformGetter.mockClear();
   },
   get() {
-    return global.navigator.platform === 'MacIntel' ? 'mac' : 'windows';
+return global.navigator.platform === 'MacIntel' ? 'mac' : 'windows';
   },
   set(name: 'mac' | 'windows') {
-    switch (name) {
-      case 'mac': {
-        platformGetter.mockReturnValue('MacIntel');
-        break;
-      }
-      case 'windows': {
-        platformGetter.mockReturnValue('Win32');
-        break;
-      }
-      default: {
-        break;
-      }
-    }
+switch (name) {
+  case 'mac': {
+platformGetter.mockReturnValue('MacIntel');
+break;
+  }
+  case 'windows': {
+platformGetter.mockReturnValue('Win32');
+break;
+  }
+  default: {
+break;
+  }
+}
   },
 };

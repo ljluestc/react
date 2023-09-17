@@ -5,24 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-import type {HostDispatcher} from './shared/ReactDOMTypes';
-
-type InternalsType = {
+ */import type {HostDispatcher} from './shared/ReactDOMTypes';type InternalsType = {
   usingClientEntryPoint: boolean,
   Events: [any, any, any, any, any, any],
   Dispatcher: {
-    current: null | HostDispatcher,
+current: null | HostDispatcher,
   },
-};
-
-const Internals: InternalsType = ({
+};const Internals: InternalsType = ({
   usingClientEntryPoint: false,
   Events: null,
   Dispatcher: {
-    current: null,
+current: null,
   },
-}: any);
-
-export default Internals;
+}: any);export default Internals;

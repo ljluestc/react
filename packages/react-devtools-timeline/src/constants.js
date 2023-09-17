@@ -5,16 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export {
+ */export {
   COMFORTABLE_LINE_HEIGHT,
   COMPACT_LINE_HEIGHT,
-} from 'react-devtools-shared/src/devtools/constants.js';
-
-export const REACT_TOTAL_NUM_LANES = 31;
-
-// Increment this number any time a backwards breaking change is made to the profiler metadata.
-export const SCHEDULING_PROFILER_VERSION = 1;
-
-export const SNAPSHOT_MAX_HEIGHT = 60;
+} from 'react-devtools-shared/src/devtools/constants.js';export const REACT_TOTAL_NUM_LANES = 31;// Increment this number any time a backwards breaking change is made to the profiler metadata.
+export const SCHEDULING_PROFILER_VERSION = 1;export const SNAPSHOT_MAX_HEIGHT = 60;

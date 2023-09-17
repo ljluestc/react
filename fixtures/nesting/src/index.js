@@ -1,1 +1,1 @@
-import './modern/index';
+import'./modern/index';

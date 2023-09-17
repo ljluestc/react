@@ -5,6 +5,4 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-throw new Error('Use react-server-dom-webpack/client instead.');
+ */throw new Error('Use react-server-dom-webpack/client instead.');

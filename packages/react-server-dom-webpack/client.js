@@ -5,6 +5,4 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export * from './client.browser';
+ */export * from './client.browser';

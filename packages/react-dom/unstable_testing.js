@@ -5,9 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export * from './index.js';
+ */export * from './index.js';
 export {
   createComponentSelector,
   createHasPseudoClassSelector,

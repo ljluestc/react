@@ -5,6 +5,4 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export {prerender, version} from './src/server/ReactDOMFizzStaticEdge';
+ */export {prerender, version} from './src/server/ReactDOMFizzStaticEdge';

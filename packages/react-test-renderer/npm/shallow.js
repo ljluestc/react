@@ -1,3 +1,1 @@
-'use strict';
-
-module.exports = require('react-shallow-renderer');
+'use strict';module.exports = require('react-shallow-renderer');

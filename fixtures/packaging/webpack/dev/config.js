@@ -1,11 +1,9 @@
-var path = require('path');
-
-module.exports = {
+var path = require('path');module.exports = {
   entry: './input',
   output: {
-    filename: 'output.js',
+filename: 'output.js',
   },
   resolve: {
-    root: path.resolve('../../../../build/oss-experimental/'),
+root: path.resolve('../../../../build/oss-experimental/'),
   },
 };

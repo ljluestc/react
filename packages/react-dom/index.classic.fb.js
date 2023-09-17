@@ -5,20 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-import {isEnabled} from 'react-dom-bindings/src/events/ReactDOMEventListener';
-
-import Internals from './src/ReactDOMSharedInternals';
-
-// For classic WWW builds, include a few internals that are already in use.
+ */import {isEnabled} from 'react-dom-bindings/src/events/ReactDOMEventListener';import Internals from './src/ReactDOMSharedInternals';// For classic WWW builds, include a few internals that are already in use.
 Object.assign((Internals: any), {
   ReactBrowserEventEmitter: {
-    isEnabled,
+isEnabled,
   },
-});
-
-export {
+});export {
   createPortal,
   createRoot,
   hydrateRoot,
@@ -37,6 +29,4 @@ export {
   preload,
   preinit,
   version,
-} from './src/client/ReactDOM';
-
-export {Internals as __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED};
+} from './src/client/ReactDOM';export {Internals as __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED};

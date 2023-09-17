@@ -5,6 +5,4 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export * from './index.stable.js';
+ */export * from './index.stable.js';

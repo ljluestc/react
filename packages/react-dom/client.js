@@ -5,52 +5,42 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-'use strict';
-
-import type {ReactNodeList} from 'shared/ReactTypes';
+ */'use strict';import type {ReactNodeList} from 'shared/ReactTypes';
 import type {
   RootType,
   HydrateRootOptions,
   CreateRootOptions,
-} from './src/client/ReactDOMRoot';
-
-import {
+} from './src/client/ReactDOMRoot';import {
   createRoot as createRootImpl,
   hydrateRoot as hydrateRootImpl,
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED as Internals,
-} from './';
-
-export function createRoot(
+} from './';export function createRoot(
   container: Element | Document | DocumentFragment,
   options?: CreateRootOptions,
 ): RootType {
   if (__DEV__) {
-    Internals.usingClientEntryPoint = true;
+Internals.usingClientEntryPoint = true;
   }
   try {
-    return createRootImpl(container, options);
+return createRootImpl(container, options);
   } finally {
-    if (__DEV__) {
-      Internals.usingClientEntryPoint = false;
-    }
-  }
+if (__DEV__) {
+Internals.usingClientEntryPoint = false;
 }
-
-export function hydrateRoot(
+  }
+}export function hydrateRoot(
   container: Document | Element,
   children: ReactNodeList,
   options?: HydrateRootOptions,
 ): RootType {
   if (__DEV__) {
-    Internals.usingClientEntryPoint = true;
+Internals.usingClientEntryPoint = true;
   }
   try {
-    return hydrateRootImpl(container, children, options);
+return hydrateRootImpl(container, children, options);
   } finally {
-    if (__DEV__) {
-      Internals.usingClientEntryPoint = false;
-    }
+if (__DEV__) {
+Internals.usingClientEntryPoint = false;
+}
   }
 }

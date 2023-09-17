@@ -1,12 +1,1 @@
-import {useState, useEffect} from 'react';
-
-export default function useTimer() {
-  const [value, setValue] = useState(() => new Date());
-  useEffect(() => {
-    const id = setInterval(() => {
-      setValue(new Date());
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return value.toLocaleTimeString();
-}
+import{useState,useEffect}from'react';exportdefaultfunctionuseTimer(){const[value,setValue]=useState(()=>newDate());useEffect(()=>{constid=setInterval(()=>{setValue(newDate());},1000);return()=>clearInterval(id);},[]);returnvalue.toLocaleTimeString();}

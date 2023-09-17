@@ -5,19 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @emails react-core
- */
-
-'use strict';
-
-describe('ReactDOMInReactServer', () => {
+ */'use strict';describe('ReactDOMInReactServer', () => {
   beforeEach(() => {
-    jest.resetModules();
-    jest.mock('react', () => require('react/react.shared-subset'));
-  });
-
-  it('can require react-dom', () => {
-    // In RSC this will be aliased.
-    require('react');
-    require('react-dom');
+jest.resetModules();
+jest.mock('react', () => require('react/react.shared-subset'));
+  });  it('can require react-dom', () => {
+// In RSC this will be aliased.
+require('react');
+require('react-dom');
   });
 });

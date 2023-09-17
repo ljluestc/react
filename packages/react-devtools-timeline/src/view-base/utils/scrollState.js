@@ -5,32 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-import {clamp} from './clamp';
-
-/**
+ */import {clamp} from './clamp';/**
  * Single-axis offset and length state.
  *
  * ```
- * contentStart   containerStart  containerEnd   contentEnd
- *     |<----------offset|              |             |
- *     |<-------------------length------------------->|
+ * contentStartcontainerStart  containerEndcontentEnd
+ *|<----------offset|| |
+ *|<-------------------length------------------->|
  * ```
  */
 export type ScrollState = {
   offset: number,
   length: number,
-};
-
-function clampOffset(state: ScrollState, containerLength: number): ScrollState {
+};function clampOffset(state: ScrollState, containerLength: number): ScrollState {
   return {
-    offset: clamp(-(state.length - containerLength), 0, state.offset),
-    length: state.length,
+offset: clamp(-(state.length - containerLength), 0, state.offset),
+length: state.length,
   };
-}
-
-function clampLength({
+}function clampLength({
   state,
   minContentLength,
   maxContentLength,
@@ -42,19 +34,17 @@ function clampLength({
   containerLength: number,
 }): ScrollState {
   return {
-    offset: state.offset,
-    length: clamp(
-      Math.max(minContentLength, containerLength),
-      Math.max(containerLength, maxContentLength),
-      state.length,
-    ),
+offset: state.offset,
+length: clamp(
+Math.max(minContentLength, containerLength),
+Math.max(containerLength, maxContentLength),
+state.length,
+),
   };
-}
-
-/**
+}/**
  * Returns `state` clamped such that:
  * - `length`: you won't be able to zoom in/out such that the content is
- *   shorter than the `containerLength`.
+ *shorter than the `containerLength`.
  * - `offset`: content remains in `containerLength`.
  */
 export function clampState({
@@ -69,17 +59,15 @@ export function clampState({
   containerLength: number,
 }): ScrollState {
   return clampOffset(
-    clampLength({
-      state,
-      minContentLength,
-      maxContentLength,
-      containerLength,
-    }),
-    containerLength,
+clampLength({
+state,
+minContentLength,
+maxContentLength,
+containerLength,
+}),
+containerLength,
   );
-}
-
-export function translateState({
+}export function translateState({
   state,
   delta,
   containerLength,
@@ -89,116 +77,90 @@ export function translateState({
   containerLength: number,
 }): ScrollState {
   return clampOffset(
-    {
-      offset: state.offset + delta,
-      length: state.length,
-    },
-    containerLength,
+{
+offset: state.offset + delta,
+length: state.length,
+},
+containerLength,
   );
-}
-
-/**
+}/**
  * Returns a new clamped `state` zoomed by `multiplier`.
  *
  * The provided fixed point will also remain stationary relative to
  * `containerStart`.
  *
  * ```
- * contentStart   containerStart                fixedPoint containerEnd
- *     |<---------offset-|                          x           |
- *     |-fixedPoint-------------------------------->x           |
- *                       |-fixedPointFromContainer->x           |
- *                       |<----------containerLength----------->|
+ * contentStartcontainerStart fixedPoint containerEnd
+ *|<---------offset-|x|
+ *|-fixedPoint-------------------------------->x|
+ *|-fixedPointFromContainer->x|
+ *|<----------containerLength----------->|
  * ```
  */
 export function zoomState({
   state,
   multiplier,
-  fixedPoint,
-
-  minContentLength,
+  fixedPoint,  minContentLength,
   maxContentLength,
   containerLength,
 }: {
   state: ScrollState,
   multiplier: number,
-  fixedPoint: number,
-
-  minContentLength: number,
+  fixedPoint: number,  minContentLength: number,
   maxContentLength: number,
   containerLength: number,
 }): ScrollState {
   // Length and offset must be computed separately, so that if the length is
-  // clamped the offset will still be correct (unless it gets clamped too).
-
-  const zoomedState = clampLength({
-    state: {
-      offset: state.offset,
-      length: state.length * multiplier,
-    },
-    minContentLength,
-    maxContentLength,
-    containerLength,
-  });
-
-  // Adjust offset so that distance between containerStart<->fixedPoint is fixed
+  // clamped the offset will still be correct (unless it gets clamped too).  const zoomedState = clampLength({
+state: {
+offset: state.offset,
+length: state.length * multiplier,
+},
+minContentLength,
+maxContentLength,
+containerLength,
+  });  // Adjust offset so that distance between containerStart<->fixedPoint is fixed
   const fixedPointFromContainer = fixedPoint + state.offset;
   const scaledFixedPoint = fixedPoint * (zoomedState.length / state.length);
   const offsetAdjustedState = clampOffset(
-    {
-      offset: fixedPointFromContainer - scaledFixedPoint,
-      length: zoomedState.length,
-    },
-    containerLength,
-  );
-
-  return offsetAdjustedState;
-}
-
-export function moveStateToRange({
+{
+offset: fixedPointFromContainer - scaledFixedPoint,
+length: zoomedState.length,
+},
+containerLength,
+  );  return offsetAdjustedState;
+}export function moveStateToRange({
   state,
   rangeStart,
   rangeEnd,
-  contentLength,
-
-  minContentLength,
+  contentLength,  minContentLength,
   maxContentLength,
   containerLength,
 }: {
   state: ScrollState,
   rangeStart: number,
   rangeEnd: number,
-  contentLength: number,
-
-  minContentLength: number,
+  contentLength: number,  minContentLength: number,
   maxContentLength: number,
   containerLength: number,
 }): ScrollState {
   // Length and offset must be computed separately, so that if the length is
-  // clamped the offset will still be correct (unless it gets clamped too).
-
-  const lengthClampedState = clampLength({
-    state: {
-      offset: state.offset,
-      length: contentLength * (containerLength / (rangeEnd - rangeStart)),
-    },
-    minContentLength,
-    maxContentLength,
-    containerLength,
-  });
-
-  const offsetAdjustedState = clampOffset(
-    {
-      offset: -rangeStart * (lengthClampedState.length / contentLength),
-      length: lengthClampedState.length,
-    },
-    containerLength,
-  );
-
-  return offsetAdjustedState;
-}
-
-export function areScrollStatesEqual(
+  // clamped the offset will still be correct (unless it gets clamped too).  const lengthClampedState = clampLength({
+state: {
+offset: state.offset,
+length: contentLength * (containerLength / (rangeEnd - rangeStart)),
+},
+minContentLength,
+maxContentLength,
+containerLength,
+  });  const offsetAdjustedState = clampOffset(
+{
+offset: -rangeStart * (lengthClampedState.length / contentLength),
+length: lengthClampedState.length,
+},
+containerLength,
+  );  return offsetAdjustedState;
+}export function areScrollStatesEqual(
   state1: ScrollState,
   state2: ScrollState,
 ): boolean {

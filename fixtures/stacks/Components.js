@@ -1,30 +1,20 @@
-// Example
-
-const Throw = React.lazy(() => {
+// Exampleconst Throw = React.lazy(() => {
   throw new Error('Example');
-});
-
-const Component = React.memo(function Component({children}) {
+});const Component = React.memo(function Component({children}) {
   return children;
-});
-
-function DisplayName({children}) {
+});function DisplayName({children}) {
   return children;
 }
-DisplayName.displayName = 'Custom Name';
-
-class NativeClass extends React.Component {
+DisplayName.displayName = 'Custom Name';class NativeClass extends React.Component {
   render() {
-    return this.props.children;
+return this.props.children;
   }
-}
-
-class FrozenClass extends React.Component {
+}class FrozenClass extends React.Component {
   constructor() {
-    super();
+super();
   }
   render() {
-    return this.props.children;
+return this.props.children;
   }
 }
 Object.freeze(FrozenClass.prototype);

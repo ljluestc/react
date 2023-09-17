@@ -5,94 +5,76 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-import type {ReactClientValue} from 'react-server/src/ReactFlightServer';
+ */import type {ReactClientValue} from 'react-server/src/ReactFlightServer';
 import type {ServerContextJSONValue, Thenable} from 'shared/ReactTypes';
 import type {ClientManifest} from './ReactFlightServerConfigWebpackBundler';
-import type {ServerManifest} from 'react-client/src/ReactFlightClientConfig';
-
-import {
+import type {ServerManifest} from 'react-client/src/ReactFlightClientConfig';import {
   createRequest,
   startWork,
   startFlowing,
   abort,
-} from 'react-server/src/ReactFlightServer';
-
-import {
+} from 'react-server/src/ReactFlightServer';import {
   createResponse,
   close,
   getRoot,
-} from 'react-server/src/ReactFlightReplyServer';
-
-import {decodeAction} from 'react-server/src/ReactFlightActionServer';
-
-export {
+} from 'react-server/src/ReactFlightReplyServer';import {decodeAction} from 'react-server/src/ReactFlightActionServer';export {
   registerServerReference,
   registerClientReference,
   createClientModuleProxy,
-} from './ReactFlightWebpackReferences';
-
-type Options = {
+} from './ReactFlightWebpackReferences';type Options = {
   identifierPrefix?: string,
   signal?: AbortSignal,
   context?: Array<[string, ServerContextJSONValue]>,
   onError?: (error: mixed) => void,
-};
-
-function renderToReadableStream(
+};function renderToReadableStream(
   model: ReactClientValue,
   webpackMap: ClientManifest,
   options?: Options,
 ): ReadableStream {
   const request = createRequest(
-    model,
-    webpackMap,
-    options ? options.onError : undefined,
-    options ? options.context : undefined,
-    options ? options.identifierPrefix : undefined,
+model,
+webpackMap,
+options ? options.onError : undefined,
+options ? options.context : undefined,
+options ? options.identifierPrefix : undefined,
   );
   if (options && options.signal) {
-    const signal = options.signal;
-    if (signal.aborted) {
-      abort(request, (signal: any).reason);
-    } else {
-      const listener = () => {
-        abort(request, (signal: any).reason);
-        signal.removeEventListener('abort', listener);
-      };
-      signal.addEventListener('abort', listener);
-    }
+const signal = options.signal;
+if (signal.aborted) {
+abort(request, (signal: any).reason);
+} else {
+const listener = () => {
+abort(request, (signal: any).reason);
+signal.removeEventListener('abort', listener);
+};
+signal.addEventListener('abort', listener);
+}
   }
   const stream = new ReadableStream(
-    {
-      type: 'bytes',
-      start: (controller): ?Promise<void> => {
-        startWork(request);
-      },
-      pull: (controller): ?Promise<void> => {
-        startFlowing(request, controller);
-      },
-      cancel: (reason): ?Promise<void> => {},
-    },
-    // $FlowFixMe[prop-missing] size() methods are not allowed on byte streams.
-    {highWaterMark: 0},
+{
+type: 'bytes',
+start: (controller): ?Promise<void> => {
+startWork(request);
+},
+pull: (controller): ?Promise<void> => {
+startFlowing(request, controller);
+},
+cancel: (reason): ?Promise<void> => {},
+},
+// $FlowFixMe[prop-missing] size() methods are not allowed on byte streams.
+{highWaterMark: 0},
   );
   return stream;
-}
-
-function decodeReply<T>(
+}function decodeReply<T>(
   body: string | FormData,
   webpackMap: ServerManifest,
 ): Thenable<T> {
   if (typeof body === 'string') {
-    const form = new FormData();
-    form.append('0', body);
-    body = form;
+const form = new FormData();
+form.append('0', body);
+body = form;
   }
   const response = createResponse(webpackMap, '', body);
   close(response);
   return getRoot(response);
-}
-
-export {renderToReadableStream, decodeReply, decodeAction};
+}export {renderToReadableStream, decodeReply, decodeAction};

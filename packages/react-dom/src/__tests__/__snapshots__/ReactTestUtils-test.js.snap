@@ -1,8 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ReactTestUtils Simulate should have locally attached media events 1`] = `
-[
-  "abort",
+// Jest Snapshot v1, https://goo.gl/fbAQLP  "abort",
   "animationEnd",
   "animationIteration",
   "animationStart",

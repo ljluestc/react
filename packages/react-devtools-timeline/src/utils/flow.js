@@ -6,8 +6,6 @@
  *
  * @flow
  */
-import type {SchedulingEvent} from '../types';
-
-export function isStateUpdateEvent(event: SchedulingEvent): boolean %checks {
+import type {SchedulingEvent} from '../types';export function isStateUpdateEvent(event: SchedulingEvent): boolean %checks {
   return event.type === 'schedule-state-update';
 }

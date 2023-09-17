@@ -5,9 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export * from './BackgroundColorView';
+ */export * from './BackgroundColorView';
 export * from './HorizontalPanAndZoomView';
 export * from './Surface';
 export * from './VerticalScrollView';

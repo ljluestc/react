@@ -1,15 +1,1 @@
-import React, {useContext} from 'react';
-
-import Theme from './Theme';
-import Suspend from './Suspend';
-
-import './Page.css';
-
-export default function Page2() {
-  let theme = useContext(Theme);
-  return (
-    <div className={theme + '-box'}>
-      <Suspend>Content of a different page</Suspend>
-    </div>
-  );
-}
+importReact,{useContext}from'react';importThemefrom'./Theme';importSuspendfrom'./Suspend';import'./Page.css';exportdefaultfunctionPage2(){lettheme=useContext(Theme);return(<divclassName={theme+'-box'}><Suspend>Contentofadifferentpage</Suspend></div>);}

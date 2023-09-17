@@ -1,3 +1,1 @@
-'use client';
-
-export * from './Counter.js';
+'use client';export * from './Counter.js';

@@ -5,23 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @emails react-core
- */
-
-'use strict';
-
-export const defaultPointerId = 1;
+ */'use strict';export const defaultPointerId = 1;
 export const defaultPointerSize = 23;
-export const defaultBrowserChromeSize = 50;
-
-/**
+export const defaultBrowserChromeSize = 50;/**
  * Button property
  * This property only guarantees to indicate which buttons are pressed during events caused by pressing or
  * releasing one or multiple buttons. As such, it is not reliable for events such as 'mouseenter', 'mouseleave',
  * 'mouseover', 'mouseout' or 'mousemove'. Furthermore, the semantics differ for PointerEvent, where the value
  * for 'pointermove' will always be -1.
- */
-
-export const buttonType = {
+ */export const buttonType = {
   // no change since last event
   none: -1,
   // left-mouse
@@ -39,13 +31,9 @@ export const buttonType = {
   forward: 4,
   // pen eraser
   eraser: 5,
-};
-
-/**
+};/**
  * Buttons bitmask
- */
-
-export const buttonsType = {
+ */export const buttonsType = {
   none: 0,
   // left-mouse
   // touch contact

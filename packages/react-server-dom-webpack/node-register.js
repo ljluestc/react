@@ -5,6 +5,4 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-module.exports = require('./src/ReactFlightWebpackNodeRegister');
+ */module.exports = require('./src/ReactFlightWebpackNodeRegister');

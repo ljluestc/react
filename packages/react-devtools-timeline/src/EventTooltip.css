@@ -1,8 +1,6 @@
 .Tooltip {
   position: fixed;
-}
-
-.TooltipSection,
+}.TooltipSection,
 .TooltipWarningSection,
 .SingleLineTextSection {
   display: block;
@@ -25,64 +23,40 @@
 }
 .SingleLineTextSection {
   white-space: nowrap;
-}
-
-.Divider {
+}.Divider {
   height: 1px;
   background-color: #aaa;
   margin: 0.25rem 0;
-}
-
-.DetailsGrid {
+}.DetailsGrid {
   display: grid;
   padding-top: 5px;
   grid-gap: 2px 5px;
   grid-template-columns: min-content auto;
-}
-
-.DetailsGridLabel {
+}.DetailsGridLabel {
   color: var(--color-dim);
   text-align: right;
   white-space: nowrap;
-}
-
-.DetailsGridLongValue {
+}.DetailsGridLongValue {
   word-break: break-all;
   max-height: 50vh;
   overflow: hidden;
-}
-
-.FlamechartStackFrameName {
+}.FlamechartStackFrameName {
   word-break: break-word;
-}
-
-.ComponentName {
+}.ComponentName {
   font-weight: bold;
   word-break: break-word;
   margin-right: 0.25rem;
-}
-
-.ReactMeasureLabel {
-}
-
-.UserTimingLabel {
+}.ReactMeasureLabel {
+}.UserTimingLabel {
   word-break: break-word;
-}
-
-.NativeEventName {
+}.NativeEventName {
   font-weight: bold;
   word-break: break-word;
   margin-right: 0.25rem;
-}
-
-.WarningText {
+}.WarningText {
   color: var(--color-warning-text-color);
-}
-
-.Image {
+}.Image {
   border: 1px solid var(--color-border);
-}
-
-.DimText {
+}.DimText {
   color: var(--color-dim);
 }

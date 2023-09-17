@@ -5,6 +5,4 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export * from './src/ReactFlightDOMServerNode';
+ */export * from './src/ReactFlightDOMServerNode';

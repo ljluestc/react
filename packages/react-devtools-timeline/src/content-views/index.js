@@ -5,9 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  * @flow
- */
-
-export * from './ComponentMeasuresView';
+ */export * from './ComponentMeasuresView';
 export * from './FlamechartView';
 export * from './NativeEventsView';
 export * from './NetworkMeasuresView';
